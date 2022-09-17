@@ -1,0 +1,81 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #004980;
+}
+
+.difficult {
+  width: 480px;
+  height: 459px;
+  left: 272px;
+  top: 158px;
+  background: #C2F5FF;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.difficult__title {
+  width: 208px;
+  height: 96px;
+  /* Pres → Text M */
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  /* or 120% */
+  text-align: center;
+  font-feature-settings: "pnum" on, "lnum" on;
+  color: #004980;
+}
+.difficult__field-buttons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 48px;
+  padding-bottom: 67px;
+}
+.difficult__button-level {
+  width: 96px;
+  height: 98px;
+  border-radius: 12px;
+  border: none;
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  /* or 112% */
+  text-align: center;
+  font-feature-settings: "pnum" on, "lnum" on;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  /* Blue / 100 */
+  background: #FFFFFF;
+  color: #0080C1;
+}
+.difficult__button-start {
+  width: 246px;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  /* or 133% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "pnum" on, "lnum" on;
+  background: #7AC100;
+  color: #FFFFFF;
+}/*# sourceMappingURL=style.css.map */
