@@ -1,4 +1,5 @@
 @import "src/styles/colors";
+@import "src/styles/fonts";
 
 * {
 	margin: 0;
@@ -7,71 +8,61 @@
 }
 
 body {
-	background: $color-body-bg;
+	font-family: "StratosSkyeng", sans-serif;
 
+	height: 100vh;
+	width: 100vw;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background: $color-body-bg;
 }
 
-.difficult {
+.block-message {
 	width: 480px;
 	height: 459px;
-	left: 272px;
-	top: 158px;
 
-	background: $color-field-difficult-bg;
+	background: $color-block-message-bg;
 
 	border-radius: 12px;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
 
+.difficult {
 	&__title {
 		width: 208px;
 		height: 96px;
-		// left: 408px;
-		// top: 210px;
-
-		/* Pres → Text M */
 
 		font-family: 'StratosSkyeng';
 		font-style: normal;
 		font-weight: 400;
 		font-size: 40px;
 		line-height: 48px;
-		/* or 120% */
 
 		text-align: center;
 		font-feature-settings: 'pnum' on, 'lnum' on;
 
-		color: #004980;
+		color: $color-block-message-title;
+
+		margin-top: 52px
 	}
 
 	&__field-buttons {
-		// width: 208px;
-		// height: 96px;
-
-		// font-family: 'StratosSkyeng';
-		// font-style: normal;
-		// font-weight: 400;
-		// font-size: 40px;
-		// line-height: 48px;
-
-
-		// color: $color-field-difficult-text;
-
 		display: flex;
-		align-items: center;
 		gap: 24px;
 
-		padding-top: 48px;
-		padding-bottom: 67px;
+		margin-top: 48px;
+		margin-bottom: 67px;
 	}
 
 	&__button-level {
 		width: 96px;
 		height: 98px;
-		// left: 465px;
-		// top: 354px;
 
 		border-radius: 12px;
 		border: none;
@@ -81,25 +72,18 @@ body {
 		font-weight: 400;
 		font-size: 64px;
 		line-height: 72px;
-		/* or 112% */
-
-		text-align: center;
-		font-feature-settings: 'pnum' on, 'lnum' on;
 
 		display: flex;
 		align-items: center;
-		text-align: center;
+		justify-content: center;
 
-		/* Blue / 100 */
-		background: #FFFFFF;
-		color: #0080C1;
+		background: $color-button-level-bg;
+		color: $color-button-level-text;
 	}
 
 	&__button-start {
 		width: 246px;
 		height: 50px;
-		// left: 389px;
-		// top: 519px;
 
 		border: none;
 		border-radius: 12px;
@@ -109,14 +93,13 @@ body {
 		font-weight: 400;
 		font-size: 24px;
 		line-height: 32px;
-		/* or 133% */
 
 		display: flex;
 		align-items: center;
-		text-align: center;
+		justify-content: center;
 		font-feature-settings: 'pnum' on, 'lnum' on;
 
-		background: $color-button-start-bg;
-		color: $color-button-start-text;
+		background: $color-green-button-bg;
+		color: $color-green-button-text;
 	}
 }

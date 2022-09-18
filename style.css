@@ -1,4 +1,9 @@
-@charset "UTF-8";
+@font-face {
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
+  src: local("StratosSkyeng"), url("src/fonts/StratosSkyeng/stratosskyengweb-regular.woff2") format("woff2"), url("src/fonts/StratosSkyeng/stratosskyengweb-regular.woff") format("woff"), url("src/fonts/StratosSkyeng/stratosskyeng-regular.otf") format("otf");
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,40 +11,43 @@
 }
 
 body {
+  font-family: "StratosSkyeng", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #004980;
 }
 
-.difficult {
+.block-message {
   width: 480px;
   height: 459px;
-  left: 272px;
-  top: 158px;
   background: #C2F5FF;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .difficult__title {
   width: 208px;
   height: 96px;
-  /* Pres → Text M */
   font-family: "StratosSkyeng";
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
   line-height: 48px;
-  /* or 120% */
   text-align: center;
   font-feature-settings: "pnum" on, "lnum" on;
   color: #004980;
+  margin-top: 52px;
 }
 .difficult__field-buttons {
   display: flex;
-  align-items: center;
   gap: 24px;
-  padding-top: 48px;
-  padding-bottom: 67px;
+  margin-top: 48px;
+  margin-bottom: 67px;
 }
 .difficult__button-level {
   width: 96px;
@@ -51,13 +59,9 @@ body {
   font-weight: 400;
   font-size: 64px;
   line-height: 72px;
-  /* or 112% */
-  text-align: center;
-  font-feature-settings: "pnum" on, "lnum" on;
   display: flex;
   align-items: center;
-  text-align: center;
-  /* Blue / 100 */
+  justify-content: center;
   background: #FFFFFF;
   color: #0080C1;
 }
@@ -71,10 +75,9 @@ body {
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
-  /* or 133% */
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   font-feature-settings: "pnum" on, "lnum" on;
   background: #7AC100;
   color: #FFFFFF;
