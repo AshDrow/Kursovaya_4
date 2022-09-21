@@ -20,6 +20,11 @@ body {
 	background: $color-body-bg;
 }
 
+.screen-difficult_hidden,
+.screen-play_hidden{
+	display: none;
+}
+
 .block-message {
 	width: 480px;
 	height: 459px;
@@ -34,6 +39,8 @@ body {
 }
 
 .difficult {
+
+
 	&__title {
 		width: 208px;
 		height: 96px;
@@ -58,6 +65,9 @@ body {
 
 		margin-top: 48px;
 		margin-bottom: 67px;
+		// &_alert{
+		// 	animation: myAnim 0.5s linear 0s 0 normal forwards;
+		// }
 	}
 
 	&__button-level {
@@ -79,12 +89,23 @@ body {
 
 		background: $color-button-level-bg;
 		color: $color-button-level-text;
+
+		&:hover{
+			outline: 2px solid $color-button-level-hover;
+		}
+		&_select {
+			outline: 2px solid $color-button-level-hover;
+		}
+		&_alert {
+			outline: 2px solid $color-button-level-alert;
+		}
 	}
 
 	&__button-start {
 		width: 246px;
 		height: 50px;
 
+		outline: none;
 		border: none;
 		border-radius: 12px;
 
@@ -101,5 +122,8 @@ body {
 
 		background: $color-green-button-bg;
 		color: $color-green-button-text;
+		&:hover{
+			transform: scale(1.02);
+		}
 	}
 }
