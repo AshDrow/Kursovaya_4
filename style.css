@@ -20,6 +20,11 @@ body {
   background: #004980;
 }
 
+.screen-difficult_hidden,
+.screen-play_hidden {
+  display: none;
+}
+
 .block-message {
   width: 480px;
   height: 459px;
@@ -65,9 +70,19 @@ body {
   background: #FFFFFF;
   color: #0080C1;
 }
+.difficult__button-level:hover {
+  outline: 2px solid #0080C1;
+}
+.difficult__button-level_select {
+  outline: 2px solid #0080C1;
+}
+.difficult__button-level_alert {
+  outline: 2px solid #ff0000;
+}
 .difficult__button-start {
   width: 246px;
   height: 50px;
+  outline: none;
   border: none;
   border-radius: 12px;
   font-family: "StratosSkyeng";
@@ -81,4 +96,7 @@ body {
   font-feature-settings: "pnum" on, "lnum" on;
   background: #7AC100;
   color: #FFFFFF;
+}
+.difficult__button-start:hover {
+  transform: scale(1.02);
 }/*# sourceMappingURL=style.css.map */
