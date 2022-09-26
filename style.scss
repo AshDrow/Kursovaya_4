@@ -2,128 +2,126 @@
 @import "src/styles/fonts";
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	font-family: "StratosSkyeng", sans-serif;
+    font-family: "StratosSkyeng", sans-serif;
 
-	height: 100vh;
-	width: 100vw;
+    height: 100vh;
+    width: 100vw;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-	background: $color-body-bg;
+    background: $color-body-bg;
 }
 
 .screen-difficult_hidden,
-.screen-play_hidden{
-	display: none;
+.screen-play_hidden {
+    display: none;
 }
 
 .block-message {
-	width: 480px;
-	height: 459px;
+    width: 480px;
+    height: 459px;
 
-	background: $color-block-message-bg;
+    background: $color-block-message-bg;
 
-	border-radius: 12px;
+    border-radius: 12px;
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .difficult {
+    &__title {
+        width: 208px;
+        height: 96px;
 
+        font-family: "StratosSkyeng";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
 
-	&__title {
-		width: 208px;
-		height: 96px;
+        text-align: center;
+        font-feature-settings: "pnum" on, "lnum" on;
 
-		font-family: 'StratosSkyeng';
-		font-style: normal;
-		font-weight: 400;
-		font-size: 40px;
-		line-height: 48px;
+        color: $color-block-message-title;
 
-		text-align: center;
-		font-feature-settings: 'pnum' on, 'lnum' on;
+        margin-top: 52px;
+    }
 
-		color: $color-block-message-title;
+    &__field-buttons {
+        display: flex;
+        gap: 24px;
 
-		margin-top: 52px
-	}
+        margin-top: 48px;
+        margin-bottom: 67px;
+        // &_alert{
+        // 	animation: myAnim 0.5s linear 0s 0 normal forwards;
+        // }
+    }
 
-	&__field-buttons {
-		display: flex;
-		gap: 24px;
+    &__button-level {
+        width: 96px;
+        height: 98px;
 
-		margin-top: 48px;
-		margin-bottom: 67px;
-		// &_alert{
-		// 	animation: myAnim 0.5s linear 0s 0 normal forwards;
-		// }
-	}
+        border-radius: 12px;
+        border: none;
 
-	&__button-level {
-		width: 96px;
-		height: 98px;
+        font-family: "StratosSkyeng";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 72px;
 
-		border-radius: 12px;
-		border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-		font-family: 'StratosSkyeng';
-		font-style: normal;
-		font-weight: 400;
-		font-size: 64px;
-		line-height: 72px;
+        background: $color-button-level-bg;
+        color: $color-button-level-text;
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
+        &:hover {
+            outline: 2px solid $color-button-level-hover;
+        }
+        &_select {
+            outline: 2px solid $color-button-level-hover;
+        }
+        &_alert {
+            outline: 2px solid $color-button-level-alert;
+        }
+    }
 
-		background: $color-button-level-bg;
-		color: $color-button-level-text;
+    &__button-start {
+        width: 246px;
+        height: 50px;
 
-		&:hover{
-			outline: 2px solid $color-button-level-hover;
-		}
-		&_select {
-			outline: 2px solid $color-button-level-hover;
-		}
-		&_alert {
-			outline: 2px solid $color-button-level-alert;
-		}
-	}
+        outline: none;
+        border: none;
+        border-radius: 12px;
 
-	&__button-start {
-		width: 246px;
-		height: 50px;
+        font-family: "StratosSkyeng";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
 
-		outline: none;
-		border: none;
-		border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-feature-settings: "pnum" on, "lnum" on;
 
-		font-family: 'StratosSkyeng';
-		font-style: normal;
-		font-weight: 400;
-		font-size: 24px;
-		line-height: 32px;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-feature-settings: 'pnum' on, 'lnum' on;
-
-		background: $color-green-button-bg;
-		color: $color-green-button-text;
-		&:hover{
-			transform: scale(1.02);
-		}
-	}
+        background: $color-green-button-bg;
+        color: $color-green-button-text;
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
 }
