@@ -1,5 +1,5 @@
-@import "src/styles/colors";
-@import "src/styles/fonts";
+@import 'src/styles/colors';
+@import 'src/styles/fonts';
 
 * {
     margin: 0;
@@ -8,12 +8,15 @@
 }
 
 body {
-    font-family: "StratosSkyeng", sans-serif;
+    font-family: 'StratosSkyeng', sans-serif;
+
     height: 100vh;
     width: 100vw;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     background: $color-body-bg;
 }
 
@@ -25,8 +28,11 @@ body {
 .block-message {
     width: 480px;
     height: 459px;
+
     background: $color-block-message-bg;
+
     border-radius: 12px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,20 +42,25 @@ body {
     &__title {
         width: 208px;
         height: 96px;
-        font-family: "StratosSkyeng";
+
+        margin-top: 52px;
+
+        font-family: 'StratosSkyeng', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 40px;
         line-height: 48px;
+
         text-align: center;
-        font-feature-settings: "pnum" on, "lnum" on;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
         color: $color-block-message-title;
-        margin-top: 52px;
     }
 
     &__field-buttons {
         display: flex;
         gap: 24px;
+
         margin-top: 48px;
         margin-bottom: 67px;
     }
@@ -57,16 +68,20 @@ body {
     &__button-level {
         width: 96px;
         height: 98px;
+
         border-radius: 12px;
         border: none;
-        font-family: "StratosSkyeng";
+
+        font-family: 'StratosSkyeng', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 64px;
         line-height: 72px;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
         background: $color-button-level-bg;
         color: $color-button-level-text;
 
@@ -86,18 +101,23 @@ body {
     &__button-start {
         width: 246px;
         height: 50px;
+
         outline: none;
         border: none;
         border-radius: 12px;
-        font-family: "StratosSkyeng";
+
+        font-family: 'StratosSkyeng', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
         line-height: 32px;
+
         display: flex;
         align-items: center;
         justify-content: center;
-        font-feature-settings: "pnum" on, "lnum" on;
+
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
         background: $color-green-button-bg;
         color: $color-green-button-text;
 

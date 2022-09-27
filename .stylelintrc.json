@@ -6,8 +6,9 @@
         "stylelint-config-prettier-scss",
         "stylelint-prettier/recommended"
     ],
-      "rules": {
-        "selector-class-pattern": null
-
-      }
+    "rules": {
+        "selector-class-pattern": null,
+        "font-family-name-quotes": "always-unless-keyword",
+        "declaration-empty-line-before": null
+    }
 }
