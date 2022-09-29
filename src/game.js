@@ -7,6 +7,9 @@ const blockDifficult = screenDifficult.querySelector('.difficult');
 const btnStart = blockDifficult.querySelector('.difficult__button-start');
 
 const screenPlay = document.querySelector('.screen-play');
+const btnStartAgain = screenPlay.querySelector('.header__button-start-again');
+const fieldCardsBack = screenPlay.querySelector('.field-cards-back');
+const fieldCardsFace = screenPlay.querySelector('.field-cards-face');
 
 blockDifficult.addEventListener('click', (event) => {
     const target = event.target;
@@ -32,4 +35,9 @@ btnStart.addEventListener('click', () => {
         buttonLevel.classList.add('difficult__button-level_alert');
         setTimeout(() => buttonLevel.classList.remove('difficult__button-level_alert'), 1500);
     }
+});
+
+btnStartAgain.addEventListener('click', () => {
+    fieldCardsFace.classList.add('field-cards-face_hidden');
+    fieldCardsBack.classList.remove('field-cards-back_hidden');
 });
