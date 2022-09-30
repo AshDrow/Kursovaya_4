@@ -1,0 +1,77 @@
+[33mcommit ee020eabd8b2610e33a2491c9a8bea5dbb143fba[m[33m ([m[1;36mHEAD -> [m[1;32mfrom-work-27-09-2022[m[33m, [m[1;31morigin/from-work-27-09-2022[m[33m, [m[1;32mmaster[m[33m)[m
+Author: AshDrow <zorg2007@inbox.ru>
+Date:   Tue Sep 27 18:50:33 2022 +0500
+
+    from-work-27-09
+
+[33mcommit ab6c243dea29a902df9b489952b19e3761995088[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: AshDrow <zorg2007@inbox.ru>
+Date:   Mon Sep 26 18:57:56 2022 +0500
+
+    eslint from work
+
+[33mcommit db62fb736549cb058777d4dff91421a900874c6d[m
+Author: AshDrow <zorg2007@inbox.ru>
+Date:   Mon Sep 26 12:02:26 2022 +0500
+
+    add prettier
+
+[33mcommit 1daaf5219ba61d51fc8244522faec5798275f2e6[m
+Merge: a053414 fd87a60
+Author: AshDrow <103424116+AshDrow@users.noreply.github.com>
+Date:   Mon Sep 26 09:54:44 2022 +0500
+
+    Merge pull request #2 from AshDrow/hw2-add-js-to-hw1
+    
+    add hover and js to hw_1
+
+[33mcommit fd87a60530718570f597b99b825f87ce7674e944[m[33m ([m[1;31morigin/hw2-add-js-to-hw1[m[33m)[m
+Author: Andrey Shalyugin <zorg2007@inbox.ru>
+Date:   Wed Sep 21 16:48:46 2022 +0500
+
+    add hover and js to hw_1
+
+[33mcommit a053414c6dea399a6fd3f28121ee755011f17643[m
+Merge: 5a98c83 dbf1212
+Author: AshDrow <103424116+AshDrow@users.noreply.github.com>
+Date:   Tue Sep 20 14:45:40 2022 +0500
+
+    Merge pull request #1 from AshDrow/add-screen-choose-difficult
+    
+    Add screen choose difficult (without hover)
+
+[33mcommit dbf121270ca307481734bfe801776c9d1e3c3ad6[m[33m ([m[1;31morigin/add-screen-choose-difficult[m[33m)[m
+Author: Andrey Shalyugin <zorg2007@inbox.ru>
+Date:   Sun Sep 18 18:32:27 2022 +0500
+
+    finished lesson1 without hover
+
+[33mcommit d870bcc4d692e7532884249dcb0ae5f0237e7f59[m
+Author: Andrey Shalyugin <zorg2007@inbox.ru>
+Date:   Sun Sep 18 18:03:15 2022 +0500
+
+    lesson1
+
+[33mcommit 454bd2565398cdaef7b7fd02d5ed05976146a73d[m
+Author: AshDrow <103424116+AshDrow@users.noreply.github.com>
+Date:   Sun Sep 18 08:43:20 2022 +0500
+
+    delete files
+
+[33mcommit 5a98c838b66bc3f8783617f68304534af59b3d8c[m
+Author: AshDrow <103424116+AshDrow@users.noreply.github.com>
+Date:   Sun Sep 18 08:42:25 2022 +0500
+
+    delete files
+
+[33mcommit 3e9796a6aac827e83531647898baef18a86c82da[m
+Author: AshDrow <zorg2007@inbox.ru>
+Date:   Sat Sep 17 16:49:06 2022 +0500
+
+    начало вёрстки на работе 17.09
+
+[33mcommit 2fcbe789f997308030ffc62713e59bd367a74edb[m
+Author: Andrey Shalyugin <zorg2007@inbox.ru>
+Date:   Fri Sep 16 23:07:02 2022 +0500
+
+    add files at home

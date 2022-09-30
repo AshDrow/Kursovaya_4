@@ -1,5 +1,5 @@
-@import "src/styles/colors";
-@import "src/styles/fonts";
+@import 'src/styles/colors';
+@import 'src/styles/fonts';
 
 * {
     margin: 0;
@@ -8,16 +8,23 @@
 }
 
 body {
-    font-family: "StratosSkyeng", sans-serif;
+    font-family: 'StratosSkyeng', sans-serif;
 
+    background: $color-body-bg;
+}
+
+.screen {
     height: 100vh;
     width: 100vw;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-left: calc(50% - 488px);
+    padding-right: calc(50% - 488px);
 
-    background: $color-body-bg;
+    &-difficult {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .screen-difficult_hidden,
@@ -38,23 +45,51 @@ body {
     align-items: center;
 }
 
+.button-start {
+    width: 246px;
+    height: 50px;
+
+    outline: none;
+    border: none;
+    border-radius: 12px;
+
+    font-family: 'StratosSkyeng', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    background: $color-green-button-bg;
+    color: $color-green-button-text;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
 .difficult {
     &__title {
         width: 208px;
         height: 96px;
 
-        font-family: "StratosSkyeng";
+        margin-top: 52px;
+
+        font-family: 'StratosSkyeng', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 40px;
         line-height: 48px;
 
         text-align: center;
-        font-feature-settings: "pnum" on, "lnum" on;
+        font-feature-settings: 'pnum' on, 'lnum' on;
 
         color: $color-block-message-title;
-
-        margin-top: 52px;
     }
 
     &__field-buttons {
@@ -63,9 +98,6 @@ body {
 
         margin-top: 48px;
         margin-bottom: 67px;
-        // &_alert{
-        // 	animation: myAnim 0.5s linear 0s 0 normal forwards;
-        // }
     }
 
     &__button-level {
@@ -75,7 +107,7 @@ body {
         border-radius: 12px;
         border: none;
 
-        font-family: "StratosSkyeng";
+        font-family: 'StratosSkyeng', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 64px;
@@ -91,37 +123,103 @@ body {
         &:hover {
             outline: 2px solid $color-button-level-hover;
         }
+
         &_select {
             outline: 2px solid $color-button-level-hover;
         }
+
         &_alert {
             outline: 2px solid $color-button-level-alert;
         }
     }
+}
 
-    &__button-start {
-        width: 246px;
-        height: 50px;
+.header {
+    height: 100px;
 
-        outline: none;
-        border: none;
-        border-radius: 12px;
+    margin-top: 22px;
+    margin-bottom: 46px;
 
-        font-family: "StratosSkyeng";
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &__timer-field {
+        width: 150px;
+        height: 90px;
+    }
+
+    &__timer-field-text {
+        display: flex;
+        justify-content: flex-end;
+        gap: 57px;
+    }
+
+    &__timer-text {
+        font-family: 'StratosSkyeng', sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 24px;
+        font-size: 16px;
         line-height: 32px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-feature-settings: "pnum" on, "lnum" on;
-
-        background: $color-green-button-bg;
-        color: $color-green-button-text;
-        &:hover {
-            transform: scale(1.02);
-        }
+        color: $color-timer-text;
     }
+
+    &__timer-scale {
+        font-family: 'StratosSkyeng', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 72px;
+
+        color: $color-timer-text;
+    }
+}
+
+.field-cards {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 15px;
+    row-gap: 15px;
+}
+
+.card {
+    grid-column: span 1;
+
+    width: 95px;
+    height: 133px;
+
+    border-radius: 4px;
+
+    // padding: 6px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: $color-card-bg;
+
+    &__back {
+        width: 83px;
+        height: 121px;
+
+        margin: 6px;
+
+        border-radius: 4px;
+
+        background: $color-card-back-bg;
+    }
+
+    // &__face {
+    // }
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.field-cards-back_hidden,
+.field-cards-face_hidden {
+    display: none;
 }
