@@ -2,7 +2,7 @@ window.game = {
     // CARDS_QUANTITY: '',
     DIFFICULT: '',
     GAME_STATUS: 'CHOOSE_DIFFICULT',
-    // наверное надо запилить колоду карт в отдельный ЖС файл с массивом DECK_CARDS а то преттиер заёп
+    // наверное надо запилить колоду карт в отдельный ЖС файл с массивом DECK_CARDS а то преттир заёп
     DECK_CARDS: [
         'spades_ace',
         'spades_king',
@@ -51,14 +51,14 @@ const blockDifficult = screenDifficult.querySelector('.difficult');
 const buttonStart = blockDifficult.querySelector('.difficult__button-start');
 
 const screenPlay = document.querySelector('.screen-play');
-const btnStartAgain = screenPlay.querySelector('.header__button-start-again');
-const fieldCards = screenPlay.querySelector('.field-cards');
-
-const fieldCardsBack = screenPlay.querySelector('.field-cards-back');
-const fieldCardsFace = screenPlay.querySelector('.field-cards-face');
+// const btnStartAgain = screenPlay.querySelector('.header__button-start-again');
+const fieldPlay = screenPlay.querySelector('.field-play');
+const blockCards = fieldPlay.querySelector('.field-play__block-cards');
+// const cards = blockCards.querySelectorAll('.card');
 
 function getRandomCard(arr) {
     let randomCard = Math.floor(Math.random() * arr.length);
+
     return arr[randomCard];
 }
 
@@ -72,7 +72,7 @@ function shuffleDeckCards(arr) {
 
     return shuffleArr;
 }
-
+//сраный преттир достал, нет времени разбираться с правилами, пришлось функцию добавить сюда
 function templateEngine(block) {
     if (block === undefined || block === null || block === false) {
         return document.createTextNode('');
@@ -95,25 +95,23 @@ function templateEngine(block) {
     const tag = document.createElement(block.tag);
 
     if (block.cls) {
-        //
         tag.classList.add(...[].concat(block.cls).filter(Boolean));
     }
 
     if (block.attrs) {
         const keys = Object.keys(block.attrs);
+
         keys.forEach((key) => {
-            //href
             tag.setAttribute(key, block.attrs[key]);
         });
     }
+
     const content = templateEngine(block.content);
 
     tag.appendChild(content);
 
     return tag;
 }
-
-// const container = document.querySelector('.container');
 
 blockDifficult.addEventListener('click', (event) => {
     const target = event.target;
@@ -129,10 +127,13 @@ blockDifficult.addEventListener('click', (event) => {
 });
 
 buttonStart.addEventListener('click', () => {
+    // переделать условие, если не существует или пусто и не определено, хотя вроде и так работает, кек )
     if (window.game.DIFFICULT || (!(window.game.DIFFICULT === '') && !(window.game.DIFFICULT === undefined))) {
         screenDifficult.classList.add('screen-difficult_hidden');
         screenPlay.classList.remove('screen-play_hidden');
     }
+
+    window.game.GAME_STATUS = 'PLAY';
 
     const buttonsLevel = blockDifficult.querySelectorAll('.difficult__button-level');
     for (const buttonLevel of buttonsLevel) {
@@ -141,30 +142,39 @@ buttonStart.addEventListener('click', () => {
     }
 
     for (let i = 0; i < Number(window.game.DIFFICULT); i++) {
-        // карта может зарандомиться несколько раз, можно написать условие исключения карты если такая уже есть в массиве
-        window.game.RANDOM_CARDS[i] = getRandomCard(window.game.DECK_CARDS);
+        const randomCard = getRandomCard(window.game.DECK_CARDS);
+
+        if (!window.game.RANDOM_CARDS.includes(randomCard)) {
+            window.game.RANDOM_CARDS[i] = randomCard;
+        } else {
+            i = i - 1;
+        }
+
         /**
          * const suits = ['spades', 'hearts', 'clubs', 'diamonds'];
          * const ranks = ['ace', 'king', 'queen', 'jack', 'ten', 'nine', 'eight', 'seven', 'six'];
-         * сделать рандом на каждый массив
-         * результат: название карты = сложить масть + ранг "spades + '_' + ace"
+         * сделать две переменные с рандомом на каждый массив
+         * результат: название карты = сложить две переменные "spades + '_' + ace"
          */
     }
 
     const fragmentBlockCards = document.createDocumentFragment();
     const shuffleCards = shuffleDeckCards(window.game.RANDOM_CARDS);
-    //тут надо в шаблонизаторе намастрячить карточки
     shuffleCards.forEach((card) => {
         fragmentBlockCards.appendChild(
             templateEngine({
                 tag: 'div',
                 cls: ['card'],
+                attrs: {
+                    'data-card': card,
+                },
                 content: [
                     {
                         tag: 'img',
                         cls: ['card__card-back', 'card__card-back_hidden'],
                         attrs: {
                             src: 'src/images/card_back.png',
+                            alt: 'card_back',
                         },
                     },
                     {
@@ -172,17 +182,49 @@ buttonStart.addEventListener('click', () => {
                         cls: ['card__card-face'],
                         attrs: {
                             src: `src/images/${card}.png`,
+                            alt: card,
                         },
                     },
                 ],
             })
         );
     });
-    fieldCards.appendChild(fragmentBlockCards);
-    console.log(window.game.RANDOM_CARDS);
+
+    blockCards.appendChild(fragmentBlockCards);
+    // console.log(window.game.RANDOM_CARDS);
+    // console.log(shuffleCards);
+
+    // function flipCardBack() {
+    //     cardsFace.forEach((cardFace) => {
+    //         cardFace.classList.add('card__card-face_hidden');
+    //         console.log('face: ' + cardFace);
+    //     });
+    //     cardsBack.forEach((cardBack) => {
+    //         cardBack.classList.remove('card__card-back_hidden');
+    //         console.log('back: ' + cardBack);
+    //     });
+    // }
+    setTimeout(() => {
+        // debugger;
+        // console.log('парам пам пам');
+        const cardsFace = blockCards.querySelectorAll('.card__card-face');
+        const cardsBack = blockCards.querySelectorAll('.card__card-back');
+        // можно переделать на функцию, но пока так
+        cardsFace.forEach((cardFace) => {
+            cardFace.classList.add('card__card-face_hidden');
+            console.log('face: ' + cardFace);
+        });
+        cardsBack.forEach((cardBack) => {
+            cardBack.classList.remove('card__card-back_hidden');
+            console.log('back: ' + cardBack);
+        });
+    }, 5000);
 });
 
-btnStartAgain.addEventListener('click', () => {
-    fieldCardsFace.classList.add('field-cards-face_hidden');
-    fieldCardsBack.classList.remove('field-cards-back_hidden');
-});
+// cards.addEventListener('click', (event) => {
+//     const target = event.target;
+// });
+// btnStartAgain.addEventListener('click', () => {
+//     fieldCardsFace.classList.add('field-play-face_hidden');
+//     fieldCardsBack.classList.remove('field-play-back_hidden');
+// });
