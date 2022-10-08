@@ -3,42 +3,35 @@
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Игра</title>
         <link rel="stylesheet" href="style.css" />
+        <script defer="defer" src="bundle.js"></script>
+        <link href="bundle.css" rel="stylesheet" />
     </head>
-
     <body>
         <div class="game">
             <div class="screen screen-difficult">
                 <div class="difficult block-message">
                     <p class="difficult__title">Выберите сложность</p>
                     <div class="difficult__field-buttons">
-                        <button class="difficult__button-level" data-level="3">1</button>
-                        <button class="difficult__button-level" data-level="6">2</button>
+                        <button class="difficult__button-level" data-level="3">1</button> <button class="difficult__button-level" data-level="6">2</button>
                         <button class="difficult__button-level" data-level="9">3</button>
                     </div>
                     <button class="difficult__button-start button-start">Старт</button>
                 </div>
             </div>
-
             <div class="screen screen-play screen-play_hidden">
                 <div class="header">
                     <div class="header__timer-field">
-                        <div class="header__timer-field-text">
-                            <span class="header__timer-text">min</span>
-                            <span class="header__timer-text">sek</span>
-                        </div>
+                        <div class="header__timer-field-text"><span class="header__timer-text">min</span> <span class="header__timer-text">sek</span></div>
                         <p class="header__timer-scale">00.00</p>
                     </div>
-                    <button class="header__button-start-again button-start" disabled>Начать заново</button>
+                    <button class="header__button-start-again button-start" disabled="disabled">Начать заново</button>
                 </div>
-
                 <div class="field-play"></div>
             </div>
         </div>
-
-        <!-- <script src="src/templateEngine.js"></script> -->
         <script type="module" src="src/game.js"></script>
     </body>
 </html>
