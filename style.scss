@@ -1,5 +1,5 @@
-@import 'src/styles/colors';
-@import 'src/styles/fonts';
+@import './src/styles/colors';
+@import './src/styles/fonts';
 
 * {
     margin: 0;
@@ -180,18 +180,15 @@ body {
 .field-play {
     // display: grid;
     // grid-template-columns: repeat(9, 1fr);
+    margin: auto;
+    padding: auto;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
-    // row-gap: 15px;
-    // padding: auto;
-    &__block-cards {
-        display: flex;
-        margin: auto;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
+    gap: 15px;
 }
 
 .card {
@@ -208,17 +205,27 @@ body {
 
     background: $color-card-bg;
 
+    &__card-face {
+        border-radius: 4px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
     &__card-back {
         // width: 83px;
         // height: 121px;
-
         border-radius: 4px;
 
-        background: $color-card-back-bg;
+        // background: $color-card-back-bg;
+        background-image: url('src/images/card_back.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
 
     &:hover {
-        transform: scale(1.02);
+        transform: scale(1.03);
     }
 }
 
@@ -226,4 +233,6 @@ body {
 .card__card-back_hidden,
 .card__card-face_hidden {
     display: none;
+
+    // background-image: url('src/images/card_back.png');
 }
