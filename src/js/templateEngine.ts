@@ -1,4 +1,4 @@
-export function templateEngine(block) {
+export function templateEngine(block: any) {
     if (block === undefined || block === null || block === false) {
         return document.createTextNode('');
     }

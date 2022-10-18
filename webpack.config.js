@@ -3,13 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-// const dotenv = require('dotenv');
 
 const isProduction = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 module.exports = {
     cache: false,
-    entry: './src/js/game.js',
+    entry: './src/js/game.ts',
     mode: isProduction,
     output: {
         path: path.join(__dirname, 'dist'),
@@ -18,6 +17,11 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
             {
                 //test: /\.s[ac]ss$/i,
                 test: /.s?css$/,
@@ -44,8 +48,11 @@ module.exports = {
             filename: 'bundle.css',
         }),
     ],
+    resolve: {
+        extensions: ['.ts', '.js'],
+    },
     optimization: {
         minimizer: [`...`, new CssMinimizerPlugin()],
     },
-    devtool: isProduction ? 'hidden-source-map' : 'source-map',
+    devtool: isProduction ? 'source-map' : 'source-map',
 };

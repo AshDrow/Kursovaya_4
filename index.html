@@ -5,14 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Игра</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
+ta    </head>
 
     <body>
         <div class="game">
             <div class="screen screen-difficult">
-                <div class="difficult block-message">
-                    <p class="difficult__title">Выберите сложность</p>
+                <div class="difficult block">
+                    <h2 class="difficult__title block__title">Выберите сложность</h2>
                     <div class="difficult__field-buttons">
                         <button class="difficult__button-level" data-level="3">1</button>
                         <button class="difficult__button-level" data-level="6">2</button>
@@ -23,7 +22,7 @@
             </div>
 
             <div class="screen screen-play screen-play_hidden">
-                <div class="header">
+                <div class="screen-play__header header">
                     <div class="header__timer-field">
                         <div class="header__timer-field-text">
                             <span class="header__timer-text">min</span>
@@ -31,14 +30,17 @@
                         </div>
                         <p class="header__timer-scale">00.00</p>
                     </div>
-                    <button class="header__button-start-again button-start" disabled>Начать заново</button>
+                    <button class="header__button-start-again button-start">Начать заново</button>
                 </div>
 
-                <div class="field-play"></div>
+                <div class="screen-play__field-play">
+                    <div class="screen-play__block-cards"></div>
+                </div>
+            </div>
+
+            <div class="screen screen-end-game screen-end-game_hidden">
             </div>
         </div>
 
-        <!-- <script src="src/templateEngine.js"></script> -->
-        <script type="module" src="src/game.js"></script>
     </body>
 </html>
